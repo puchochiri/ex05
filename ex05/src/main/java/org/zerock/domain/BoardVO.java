@@ -1,6 +1,7 @@
 package org.zerock.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.Data;
 
@@ -16,5 +17,6 @@ public class BoardVO {
 	
 	private int replyCnt;
 	
+	private List<BoardAttachVO> attachList;
 
 }

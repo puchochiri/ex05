@@ -12,7 +12,6 @@
     <meta name="author" content="">
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
-    
 <!--  -->
 
     <!-- jQuery -->
