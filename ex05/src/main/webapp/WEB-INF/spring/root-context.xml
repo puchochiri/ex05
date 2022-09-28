@@ -40,7 +40,6 @@
 	</bean>
 	
 	<tx:annotation-driven/>
-	<task:annotation-driven/>
 	
 	<mybatis-spring:scan base-package="org.zerock.mapper" />
 	
@@ -49,7 +48,9 @@
 	<context:component-scan base-package="org.zerock.aop"></context:component-scan>
 	
 	<context:component-scan base-package="org.zerock.sample"></context:component-scan>
+	<context:component-scan base-package="org.zerock.task"></context:component-scan>
 	
+	<task:annotation-driven/>
 	
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 		
