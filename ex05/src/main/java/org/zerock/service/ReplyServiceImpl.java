@@ -88,6 +88,7 @@ public class ReplyServiceImpl implements ReplyService {
 				mapper.getCountByBno(bno),
 				mapper.getListWithPaging(cri, bno));
 	}
+
 	
 	
 	

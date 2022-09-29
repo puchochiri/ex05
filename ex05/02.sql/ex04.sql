@@ -86,4 +86,12 @@ update tbl_board set replycnt =
 alter table tbl_attach add constraint pk_attach primary key (uuid);
 
 alter table tbl_attach add constraint fk_board_attach foreign key (bno)
-references tbl_board(bno) ON DELETE CASCADE;a
+references tbl_board(bno) ON DELETE CASCADE;
+
+
+-- 제약조건 삭제 
+ALTER TABLE tbl_reply DROP CONSTRAINT FK_REPLY_BOARD;
+
+-- 제약조건 수정
+ALTER TABLE tbl_reply ADD CONSTRAINT FK_REPLY_BOARD FOREIGN KEY(bno) 
+REFERENCES tbl_board (bno) ON DELETE CASCADE;

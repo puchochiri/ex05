@@ -22,6 +22,7 @@ import org.zerock.domain.BoardVO;
 import org.zerock.domain.Criteria;
 import org.zerock.domain.PageDTO;
 import org.zerock.service.BoardService;
+import org.zerock.service.ReplyService;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j;
@@ -33,6 +34,10 @@ import lombok.extern.log4j.Log4j;
 public class BoardController {
 	
 	private BoardService service;
+	
+	private ReplyService replyService;
+	
+	
 	
 	//@GetMapping("/list")
 	//public void list(Model model) {
@@ -118,11 +123,10 @@ public class BoardController {
 	public String remove(@RequestParam("bno") Long bno, Criteria cri, RedirectAttributes rttr) {
 		
 		log.info("remove..." + bno);
-		
+
 		List<BoardAttachVO> attachList = service.getAttachList(bno);
 		if(service.remove(bno)) {
-			// delete Attach Files
-			
+
 			deleteFiles(attachList);
 			rttr.addFlashAttribute("result","success");
 		}

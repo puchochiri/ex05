@@ -89,6 +89,19 @@ public class ReplyMapperTests {
 		log.info("UPDATE COUNT: " + count);
 		
 	}
+	
+	
+	@Test
+	public void testDeleteALL() {
+		
+		
+		
+		Long bno = 317L;
+		
+		mapper.deleteReplyALL(bno);
+		
+	}
+	
 /*	
 	@Test
 	public void testList() {

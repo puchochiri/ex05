@@ -29,6 +29,14 @@
 		where rno = #{rno}
 	
 	</update>
+	
+	<delete id="deleteReplyALL">
+	
+		delete from tbl_reply where bno = #{bno}
+	
+	</delete>
+	
+	
 	<!-- 
 	<select id="getListWithPaging" resultType="org.zerock.domain.ReplyVO">
 	
