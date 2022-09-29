@@ -37,8 +37,6 @@ public class BoardController {
 	
 	private ReplyService replyService;
 	
-	
-	
 	//@GetMapping("/list")
 	//public void list(Model model) {
 	//	log.info("list");
@@ -123,10 +121,13 @@ public class BoardController {
 	public String remove(@RequestParam("bno") Long bno, Criteria cri, RedirectAttributes rttr) {
 		
 		log.info("remove..." + bno);
+		// replyService.deleteReplyALL(bno);
 
+		
+		
 		List<BoardAttachVO> attachList = service.getAttachList(bno);
 		if(service.remove(bno)) {
-
+			
 			deleteFiles(attachList);
 			rttr.addFlashAttribute("result","success");
 		}

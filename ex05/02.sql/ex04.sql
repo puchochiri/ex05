@@ -88,7 +88,6 @@ alter table tbl_attach add constraint pk_attach primary key (uuid);
 alter table tbl_attach add constraint fk_board_attach foreign key (bno)
 references tbl_board(bno) ON DELETE CASCADE;
 
-
 -- 제약조건 삭제 
 ALTER TABLE tbl_reply DROP CONSTRAINT FK_REPLY_BOARD;
 
